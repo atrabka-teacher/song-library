@@ -4,14 +4,6 @@ import Block from "../../shared/Block/Block";
 import { connect } from "react-redux";
 import { getRecommendedSongs } from "../../../store/user/user.selectors";
 
-const mapStateToProps = (state) => ({
-  recommendedSongs: getRecommendedSongs(state),
-});
-
-const mapDispatchToProps = (dispatch) => ({});
-
-const connector = connect(mapStateToProps, mapDispatchToProps);
-
 class RecommendedSongs extends React.Component {
   constructor(props) {
     super(props);
@@ -38,4 +30,4 @@ class RecommendedSongs extends React.Component {
   }
 }
 
-export default connector(RecommendedSongs);
+export default RecommendedSongs;

@@ -9,20 +9,6 @@ import {
 import { connect } from "react-redux";
 import { getFavouriteGenres } from "../../../store/user/user.selectors";
 
-const mapStateToProps = (state) => ({
-  favouriteGenres: getFavouriteGenres(state),
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  onFavouriteGenreSelect: (genre) => {
-    dispatch(addFavouriteGenreAction({ genre }));
-  },
-  onFavouriteGenreUnselect: (genre) => {
-    dispatch(removeFavouriteGenreAction({ genre }));
-  },
-});
-
-const connector = connect(mapStateToProps, mapDispatchToProps);
 class UserBar extends React.Component {
   constructor(props) {
     super(props);
@@ -71,4 +57,4 @@ class UserBar extends React.Component {
   }
 }
 
-export default connector(UserBar);
+export default UserBar;

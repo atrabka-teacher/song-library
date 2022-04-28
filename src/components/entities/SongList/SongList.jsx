@@ -4,14 +4,6 @@ import Block from "../../shared/Block/Block";
 import { connect } from "react-redux";
 import { getSongs } from "../../../store/songs/songs.selectors";
 
-const mapStateToProps = (state) => ({
-  songs: getSongs(state),
-});
-
-const mapDispatchToProps = (dispatch) => ({});
-
-const connector = connect(mapStateToProps, mapDispatchToProps);
-
 class SongList extends React.Component {
   constructor(props) {
     super(props);
@@ -43,7 +35,7 @@ class SongList extends React.Component {
               <span>Genre</span>
             </div>
           </div>
-          {songs.map((song) => (
+          {songs?.map((song) => (
             <div key={song} className="row song">
               <div className="col">
                 <img className="cover" src={song.cover} alt={"cover"} />
@@ -68,4 +60,4 @@ class SongList extends React.Component {
   }
 }
 
-export default connector(SongList);
+export default SongList;

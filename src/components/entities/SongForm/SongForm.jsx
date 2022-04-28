@@ -5,16 +5,6 @@ import genres from "../../../assets/genres.json";
 import { connect } from "react-redux";
 import { addSongAction } from "../../../store/songs/songs.actions";
 
-const mapStateToProps = (state) => ({});
-
-const mapDispatchToProps = (dispatch) => ({
-  onSongAdd: (song) => {
-    dispatch(addSongAction({ song }));
-  },
-});
-
-const connector = connect(mapStateToProps, mapDispatchToProps);
-
 class SongForm extends React.Component {
   initialState = {
     author: "",
@@ -110,4 +100,4 @@ class SongForm extends React.Component {
   }
 }
 
-export default connector(SongForm);
+export default SongForm;
